@@ -31,6 +31,7 @@ jobs:
 
       - name: Set up SSH key
         run: |
+          export HOME=/home/runner
           mkdir -p $HOME/.ssh
           echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
